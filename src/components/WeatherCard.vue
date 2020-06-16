@@ -34,7 +34,7 @@ const WeatherCard = Vue.extend({
     computed: {
         // need annotation
         temp(): number {
-            return (this.data.temp - 273).toFixed(2)
+            return parseFloat((this.data.temp - 273).toFixed(2))
         },
     },
 })
