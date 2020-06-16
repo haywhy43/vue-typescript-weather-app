@@ -11,8 +11,10 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "noImplicitAny": true,
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "@patricia_engineering/patricia-ui-components"
     ],
     "paths": {
       "@/*": [
@@ -24,8 +26,12 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+
+    // this line is to check the types folder to import libraries that are not essentially typescript
+    "typeRoots": [ "src/types", "./node_modules/@types"]
   },
+
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
@@ -34,6 +40,8 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "src/types"
+  ],
+
 }
